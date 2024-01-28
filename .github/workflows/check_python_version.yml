@@ -1,27 +1,17 @@
-name: Check Python Version
-
-on:
-  push:
-    branches:
-      - check_python_version
-
-jobs:
-  check-python-version:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up Python 3.11
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.11
-
-    - name: Upgrade pip
-      run: |
-        python -m pip install --upgrade pip
-
-    - name: Display Python version
-      run: |
-        python --version
+def add_numbers(a, b):
+ return a+b
+def subtract_numbers(a , b):
+ return a - b
+def multiply_numbers(a,b):
+ return a* b
+def divide_numbers(a, b):
+ if b== 0:
+ raise ValueError("Dzielenie przez zero jest niedozwolone.")
+ return a /b
+if __name__ == "__main__":
+ num1 = 10
+ num2 = 5
+ print(f"Dodawanie: {add_numbers(num1, num2)}")
+ print(f"Odejmowanie: {subtract_numbers(num1, num2)}")
+ print(f"Mnożenie: {multiply_numbers(num1, num2)}")
+ print(f"Dzielenie: {divide_numbers(num1, num2)}")
