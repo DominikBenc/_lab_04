@@ -9,12 +9,10 @@ jobs:
   check-syntax-and-run-tests:
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
         os: [windows-latest, ubuntu-latest]
         python-version: [3.9, 3.10, 3.11]
-      exclude:
-        - os: ubuntu-latest
-          python-version: 3.10
 
     steps:
     - name: Checkout repository
